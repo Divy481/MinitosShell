@@ -1,4 +1,5 @@
-CMakeFiles/run.dir/main.cpp.o: /home/devil/Desktop/customShell/main.cpp \
+CMakeFiles/run.dir/input_parsing.cpp.o: \
+ /home/devil/Desktop/customShell/input_parsing.cpp \
  /usr/include/stdc-predef.h /home/devil/Desktop/customShell/shell.hpp \
  /usr/include/x86_64-linux-gnu/c++/13/bits/stdc++.h \
  /usr/include/c++/13/cassert \

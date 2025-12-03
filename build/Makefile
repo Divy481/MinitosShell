@@ -129,6 +129,30 @@ run/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/run.dir/build.make CMakeFiles/run.dir/build
 .PHONY : run/fast
 
+input_parsing.o: input_parsing.cpp.o
+.PHONY : input_parsing.o
+
+# target to build an object file
+input_parsing.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/run.dir/build.make CMakeFiles/run.dir/input_parsing.cpp.o
+.PHONY : input_parsing.cpp.o
+
+input_parsing.i: input_parsing.cpp.i
+.PHONY : input_parsing.i
+
+# target to preprocess a source file
+input_parsing.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/run.dir/build.make CMakeFiles/run.dir/input_parsing.cpp.i
+.PHONY : input_parsing.cpp.i
+
+input_parsing.s: input_parsing.cpp.s
+.PHONY : input_parsing.s
+
+# target to generate assembly for a file
+input_parsing.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/run.dir/build.make CMakeFiles/run.dir/input_parsing.cpp.s
+.PHONY : input_parsing.cpp.s
+
 main.o: main.cpp.o
 .PHONY : main.o
 
@@ -162,6 +186,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... run"
+	@echo "... input_parsing.o"
+	@echo "... input_parsing.i"
+	@echo "... input_parsing.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
