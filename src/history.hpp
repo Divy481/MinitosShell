@@ -3,7 +3,9 @@
 
 #include<vector>
 #include<string>
-int history_command(std::vector<std::string>& historyList, char** args);
-void load_history(std::vector<std::string>& historyList);
-void save_history(std::vector<std::string>& historyList);
+#include<ctime>
+void save_history(const std::string& cmd, std::time_t t);
+void load_history(std::vector<std::string>& cmds,
+                  std::vector<std::time_t>& times);
+void history_command();
 #endif   //HISTROY_HPP

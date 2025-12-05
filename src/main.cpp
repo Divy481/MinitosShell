@@ -3,6 +3,8 @@
 #include <sys/wait.h>
 #include "cd.hpp"
 #include "history.hpp"
+#include<chrono>
+#include<ctime>
 
 std::vector<std::string> tokenize(const std::string& input) {
     std::string token;
@@ -34,7 +36,9 @@ std::vector<std::string> tokenize(const std::string& input) {
 void shell_loop(char** env) {
     std::string input;
     std::vector<std::string>history_list;
-    load_history(history_list);
+    std::vector<std::time_t>timeHistory;
+
+    load_history(history_list,timeHistory);
 
     while (true) {
         char curr[PATH_MAX];
@@ -46,8 +50,10 @@ void shell_loop(char** env) {
             break;
         }
         if(!input.empty()){
-            history_list.push_back(input);
-            save_history(history_list);
+            auto now = std::chrono::system_clock::now();
+            std::time_t current = std::chrono::system_clock::to_time_t(now);
+
+            save_history(input, current);
         }
 
         // Skip empty command
@@ -83,7 +89,7 @@ void shell_loop(char** env) {
         }
 
         if(strcmp(args[0],"history")==0){
-            history_command(history_list,args.data());
+            history_command();
             continue;
         }
 
