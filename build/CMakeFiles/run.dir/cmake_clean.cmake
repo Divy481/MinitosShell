@@ -7,6 +7,10 @@ file(REMOVE_RECURSE
   "CMakeFiles/run.dir/src/ls.cpp.o.d"
   "CMakeFiles/run.dir/src/main.cpp.o"
   "CMakeFiles/run.dir/src/main.cpp.o.d"
+  "CMakeFiles/run.dir/src/pipe.cpp.o"
+  "CMakeFiles/run.dir/src/pipe.cpp.o.d"
+  "CMakeFiles/run.dir/src/tokenize.cpp.o"
+  "CMakeFiles/run.dir/src/tokenize.cpp.o.d"
   "run"
   "run.pdb"
 )

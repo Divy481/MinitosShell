@@ -5,14 +5,16 @@
 #include "cd.hpp"
 #include "history.hpp"
 #include"ls.hpp"
+#include "tokenize.hpp"
+#include "pipe.hpp"
 #include<chrono>
 #include<ctime>
 
 #define BLUE    "\033[34m" 
 #define RESET   "\033[0m"
-#define GREEN    "\033[32m"
-#define RED          "\033[31m"
-#define CYAN         "\033[36m"
+#define GREEN   "\033[32m"
+#define RED     "\033[31m"
+#define CYAN    "\033[36m"
 
 
 void start_gui(){
@@ -27,35 +29,6 @@ void start_gui(){
     std::cout<<RED<<"----------------------------------------------------"<<RESET<<"\n";
 
 }
-
-std::vector<std::string> tokenize(const std::string& input) {
-    std::string token;
-    std::vector<std::string> tokens;
-    bool in_quotes = false;
-
-    for (char ch : input) {
-        if (ch == '"') {
-            in_quotes = !in_quotes;
-            continue;
-        }
-
-        if (!in_quotes && isspace(ch)) {
-            if (!token.empty()) {
-                tokens.push_back(token);
-                token.clear();
-            }
-        } else {
-            token += ch;
-        }
-    }
-
-    if (!token.empty())
-        tokens.push_back(token);
-
-    return tokens;
-}
-
-
 
 void shell_loop(char** env) {
     std::string input;
@@ -99,6 +72,14 @@ void shell_loop(char** env) {
         // Built-in commands
         if (strcmp(args[0], "cd") == 0) {
             cd_command(args.data());
+            continue;
+        }
+
+        std::vector<char*> left_cmd;
+        std::vector<char*> right_cmd;
+
+        if(praser_pipe(input,left_cmd,right_cmd)){
+            pipe_command(left_cmd.data(),right_cmd.data());
             continue;
         }
 

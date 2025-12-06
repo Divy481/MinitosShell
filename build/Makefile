@@ -225,6 +225,54 @@ src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/run.dir/build.make CMakeFiles/run.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+src/pipe.o: src/pipe.cpp.o
+.PHONY : src/pipe.o
+
+# target to build an object file
+src/pipe.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/run.dir/build.make CMakeFiles/run.dir/src/pipe.cpp.o
+.PHONY : src/pipe.cpp.o
+
+src/pipe.i: src/pipe.cpp.i
+.PHONY : src/pipe.i
+
+# target to preprocess a source file
+src/pipe.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/run.dir/build.make CMakeFiles/run.dir/src/pipe.cpp.i
+.PHONY : src/pipe.cpp.i
+
+src/pipe.s: src/pipe.cpp.s
+.PHONY : src/pipe.s
+
+# target to generate assembly for a file
+src/pipe.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/run.dir/build.make CMakeFiles/run.dir/src/pipe.cpp.s
+.PHONY : src/pipe.cpp.s
+
+src/tokenize.o: src/tokenize.cpp.o
+.PHONY : src/tokenize.o
+
+# target to build an object file
+src/tokenize.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/run.dir/build.make CMakeFiles/run.dir/src/tokenize.cpp.o
+.PHONY : src/tokenize.cpp.o
+
+src/tokenize.i: src/tokenize.cpp.i
+.PHONY : src/tokenize.i
+
+# target to preprocess a source file
+src/tokenize.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/run.dir/build.make CMakeFiles/run.dir/src/tokenize.cpp.i
+.PHONY : src/tokenize.cpp.i
+
+src/tokenize.s: src/tokenize.cpp.s
+.PHONY : src/tokenize.s
+
+# target to generate assembly for a file
+src/tokenize.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/run.dir/build.make CMakeFiles/run.dir/src/tokenize.cpp.s
+.PHONY : src/tokenize.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -246,6 +294,12 @@ help:
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/pipe.o"
+	@echo "... src/pipe.i"
+	@echo "... src/pipe.s"
+	@echo "... src/tokenize.o"
+	@echo "... src/tokenize.i"
+	@echo "... src/tokenize.s"
 .PHONY : help
 
 

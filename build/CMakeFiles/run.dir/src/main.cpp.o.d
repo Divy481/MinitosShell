@@ -333,4 +333,6 @@ CMakeFiles/run.dir/src/main.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/types/idtype_t.h \
  /home/devil/Desktop/customShell/src/cd.hpp \
  /home/devil/Desktop/customShell/src/history.hpp \
- /home/devil/Desktop/customShell/src/ls.hpp
+ /home/devil/Desktop/customShell/src/ls.hpp \
+ /home/devil/Desktop/customShell/src/tokenize.hpp \
+ /home/devil/Desktop/customShell/src/pipe.hpp
