@@ -1,10 +1,31 @@
 #include <bits/stdc++.h>
 #include <unistd.h>
 #include <sys/wait.h>
+
 #include "cd.hpp"
 #include "history.hpp"
+#include"ls.hpp"
 #include<chrono>
 #include<ctime>
+
+#define BLUE    "\033[34m" 
+#define RESET   "\033[0m"
+#define GREEN    "\033[32m"
+#define RED          "\033[31m"
+
+
+void start_gui(){
+    std::cout<<RED<<"----------------------------------------------------"<<RESET<<"\n";
+    
+    std::cout<<RED<<"|"<<std::setw(52)<<"|"<<"\n";
+    std::cout<<RED<<"|"<<std::setw(52)<<"|"<<"\n";
+    std::cout<<RED<<"|"<<std::setw(25)<<"MINTOS"<<std::setw(27)<<"|"<<"\n";
+    std::cout<<RED<<"|"<<std::setw(30)<<"BY:- JACK DUNIYA KA PAPA"<<std::setw(22)<<"|"<<"\n";
+    std::cout<<RED<<"|"<<std::setw(52)<<"|"<<"\n";
+    
+    std::cout<<RED<<"----------------------------------------------------"<<RESET<<"\n";
+
+}
 
 std::vector<std::string> tokenize(const std::string& input) {
     std::string token;
@@ -33,6 +54,8 @@ std::vector<std::string> tokenize(const std::string& input) {
     return tokens;
 }
 
+
+
 void shell_loop(char** env) {
     std::string input;
     std::vector<std::string>history_list;
@@ -43,7 +66,7 @@ void shell_loop(char** env) {
     while (true) {
         char curr[PATH_MAX];
         getcwd(curr,sizeof(curr));
-        std::cout << "mintOS[SHELL]> "<<"["<<curr<<"] ~ ";
+        std::cout<<GREEN  <<"mintOS[SHELL]> "<<RESET<<BLUE<<"["<<curr<<"] ~ "<<RESET;
         
         if (!std::getline(std::cin, input)) {
             std::cerr << "EXIT\n";
@@ -92,7 +115,9 @@ void shell_loop(char** env) {
             history_command();
             continue;
         }
-
+        if(strcmp(args[0],"ls")==0){
+            ls_command(args.data());
+        }
         // External command →
         
     }
@@ -101,6 +126,7 @@ void shell_loop(char** env) {
 int main(int argc, char** argv, char** env) {
     (void)argc;
     (void)argv;
+    start_gui();
     shell_loop(env);
     return 0;
 }

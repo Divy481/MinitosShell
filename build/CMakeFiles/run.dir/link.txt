@@ -1,1 +1,1 @@
-/usr/bin/c++ CMakeFiles/run.dir/src/main.cpp.o CMakeFiles/run.dir/src/cd.cpp.o CMakeFiles/run.dir/src/history.cpp.o -o run 
+/usr/bin/c++ CMakeFiles/run.dir/src/main.cpp.o CMakeFiles/run.dir/src/cd.cpp.o CMakeFiles/run.dir/src/history.cpp.o CMakeFiles/run.dir/src/ls.cpp.o -o run 
